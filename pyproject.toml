@@ -8,4 +8,5 @@ dependencies = [
     "pywin32>=312; sys_platform == 'win32'",
     "httpx>=0.28.1",
     "playwright>=1.62.0",
+    "beautifulsoup4>=4.15.0",
 ]

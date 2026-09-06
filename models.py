@@ -52,7 +52,7 @@ class State(TypedDict):
     name: str
     doctors: list[Doctor]
     selected_doctors: list[str]
-    time: str 
+    time: str
 
 
 class AppointmentDirection(TypedDict):
