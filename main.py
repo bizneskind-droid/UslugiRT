@@ -89,11 +89,13 @@ async def send_request(
                 url,
             )
 
-        except httpx.HTTPError:
+        except httpx.HTTPError as e:
             logger.warning(
-                "Сетевая ошибка при запросе %s",
+                "Сетевая ошибка при запросе %s: %r",
                 url,
+                e,
             )
+            await asyncio.sleep(1)
 
     raise RuntimeError(f"Не удалось выполнить запрос: {url}")
 
@@ -156,7 +158,7 @@ class UslugiRT:
 
     async def check_dates(self):
 
-        attempts = 75
+        attempts = 5
 
         for attempt in range(1, attempts + 1):
             response = await send_request(
