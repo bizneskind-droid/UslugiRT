@@ -169,8 +169,11 @@ def set_task(selected_time):
         from autostart_windows import windows_task
 
         windows_task(selected_time)
+        
     elif platform == "linux":
-        pass
+        from autostart_linux import linux_task
+        
+        linux_task(selected_time)
 
 
 def add_appointment(appointments: Appointments, state: State) -> Appointments:
