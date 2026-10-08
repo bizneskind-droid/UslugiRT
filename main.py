@@ -158,7 +158,7 @@ class UslugiRT:
 
     async def check_dates(self):
 
-        attempts = 5
+        attempts = 75
 
         for attempt in range(1, attempts + 1):
             response = await send_request(
